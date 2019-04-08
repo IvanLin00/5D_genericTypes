@@ -12,10 +12,10 @@ public class FibPair {
         
         /* optional extra education: Fibonacci numbers
            recursively, and in linear time */
-        // oneFib(  0, 0);  // base case
-        // oneFib(  1, 1);  // smallest recursive case, or base case
-        // oneFib(  2, 1);  // recursive case, sometimes smallest
-        // oneFib(  7, 13); // recursive case
+        oneFib(  0, 0);  // base case
+        oneFib(  1, 1);  // smallest recursive case, or base case
+        oneFib(  2, 1);  // recursive case, sometimes smallest
+        oneFib(  7, 13); // recursive case
 
         // System.out.println( "no noticeable delay before...");
         // oneFib( 46, 1836311903);
@@ -35,13 +35,13 @@ public class FibPair {
                                 ) {
 
         // code here to make a pair from the params
-
+	Pair<Integer> p = new Pair<Integer>(bigger,smaller);
         System.out.println(
             "The pair after "
-          // + ?? the pair you made
-          // + " is " + nextPairAfter( ?? the pair you made)
-          + " ...expecting " + expect
-          + System.lineSeparator());
+            + p
+            + " is " + nextPairAfter(p)
+            + " ...expecting " + expect
+            + System.lineSeparator());
      }
 
 
@@ -53,8 +53,9 @@ public class FibPair {
         the big number is the sum of the given pair
         the small number is the the old big number
      */
-    private static ?? nextPairAfter( ??) {
-        return ?? the next pair;
+    private static Pair<Integer> nextPairAfter(Pair<Integer> oldPair) {
+        Pair<Integer> newPair = new Pair<Integer>(oldPair.getSecond() + oldPair.getFirst(),oldPair.getFirst());
+	return newPair;
     }
 
 
@@ -82,6 +83,11 @@ public class FibPair {
               n >= 0
      */
     private static Integer fib( int n) {
-        return -2;
+        return fib(n,0,1);
+    }
+
+    private static Integer fib(int n , int first, int second){
+	if (n <= 0) return first;
+	return fib(n-1,second,first+second);
     }
 }

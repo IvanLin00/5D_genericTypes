@@ -5,8 +5,8 @@
 
  based on _Core Java_ v10, by Cay Horstmann
  */
-public class Pair<T> 
-{
+public class Pair<T>{
+    
     private T first;
     private T second;
 
@@ -17,4 +17,8 @@ public class Pair<T>
 
     public T getFirst()  { return first; }
     public T getSecond() { return second; }
+
+    public String toString(){
+	return "[" + first + "," + second + "]";
+    }
 }
