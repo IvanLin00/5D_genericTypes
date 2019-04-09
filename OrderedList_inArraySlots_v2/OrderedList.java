@@ -20,7 +20,7 @@ public interface OrderedList{
       @return true, in keeping with add() in
                     Java's Collection interface
      */
-    boolean add( int value);
+    boolean add(int value);
 
 
     /**

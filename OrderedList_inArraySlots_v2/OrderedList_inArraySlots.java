@@ -5,16 +5,17 @@
   increasing value, implemented using a
   List_inArraySlots
  */
+ 
+ import java.util.ArrayList;
+ 
+public class OrderedList_inArraySlots implements OrderedList {
 
-public class OrderedList_inArraySlots
-    implements OrderedList {
+    private ArrayList<Integer> list_iAS;
 
-    private ?? Java-standard ArrayList here ?? list_iAS;
-
-    public OrderedList_inArraySlots() {
-        list_iAS = new List_inArraySlots();
-    }
-
+	public OrderedList_inArraySlots(){
+		list_iAS = new ArrayList<Integer>();
+	}
+	
     /**
       @return the number of elements in this list
      */
